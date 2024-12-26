@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos API</title>
+    <!-- Estilos y Datatables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+</head>
+<body>
+    <div class="overlay"></div> <!-- Superposición de fondo oscuro -->
+
+    <div class="container"> <!-- Contenedor de tarjeta -->
+        <h1>Productos</h1>
+
+        <!-- Formulario para agregar productos -->
+        <form id="productForm">
+            <label for="name">Nombre del producto:</label><br>
+            <input type="text" id="name" name="name" required><br>
+            
+            <label for="price">Precio:</label><br>
+            <input type="number" id="price" name="price" required><br>
+            
+            <label for="category">Categoría:</label><br>
+            <input type="text" id="category" name="category" required><br>
+            
+            <button type="submit">Agregar producto</button>
+        </form>
+
+        <!-- Tabla para mostrar productos -->
+        <table id="productTable" class="display">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Categoría</th>
+                </tr>
+            </thead>
+            <tbody id="productTableBody">
+            <!-- Los productos se agregarán aquí dinámicamente -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Script para consumir la API de productos -->
+    <script>
+        const API_URL = 'http://localhost:3000/products';
+
+        // Obtener referencia al formulario y a la tabla
+        const productForm = document.getElementById('productForm');
+        const productTableBody = document.getElementById('productTableBody');
+
+        // Función para obtener y mostrar productos
+        async function fetchProducts() {
+            const response = await fetch(API_URL);
+            const products = await response.json();
+            
+            productTableBody.innerHTML = ''; // Limpiar tabla
+            products.forEach(product => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${product.id}</td>
+                    <td>${product.name}</td>
+                    <td>${product.price}</td>
+                    <td>${product.category}</td>
+                `;
+                productTableBody.appendChild(row);
+            });
+
+            // Inicializar DataTables después de cargar los productos y poner idioma en español
+            $('#productTable').DataTable({
+                "language": {
+                    "url": "https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json" // Traducción al español
+                }
+            });
+        }
+
+        // Función para agregar un nuevo producto
+        async function addProduct(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(productForm);
+            const product = {
+                name: formData.get('name'),
+                price: parseFloat(formData.get('price')),
+                category: formData.get('category')
+            };
+
+            const response = await fetch(API_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(product)
+            });
+
+            if (response.ok) {
+                alert('Producto agregado exitosamente.');
+                productForm.reset();
+                fetchProducts(); // Actualizar lista de productos
+            } else {
+                const error = await response.json();
+                alert(`Error: ${error.error}`);
+            }
+        }
+
+        // Asociar evento de envío del formulario
+        productForm.addEventListener('submit', addProduct);
+
+        // Obtener productos al cargar la página
+        fetchProducts();
+    </script>
+</body>
+</html>
