@@ -1,0 +1,15 @@
+C:\Users\MSI\Desktop\proyexto sam\PruebaTecnica\LogicaAlgoritmos\bin\Debug\net9.0\LogicaAlgoritmos.exe
+C:\Users\MSI\Desktop\proyexto sam\PruebaTecnica\LogicaAlgoritmos\bin\Debug\net9.0\LogicaAlgoritmos.deps.json
+C:\Users\MSI\Desktop\proyexto sam\PruebaTecnica\LogicaAlgoritmos\bin\Debug\net9.0\LogicaAlgoritmos.runtimeconfig.json
+C:\Users\MSI\Desktop\proyexto sam\PruebaTecnica\LogicaAlgoritmos\bin\Debug\net9.0\LogicaAlgoritmos.dll
+C:\Users\MSI\Desktop\proyexto sam\PruebaTecnica\LogicaAlgoritmos\bin\Debug\net9.0\LogicaAlgoritmos.pdb
+C:\Users\MSI\Desktop\proyexto sam\PruebaTecnica\LogicaAlgoritmos\obj\Debug\net9.0\LogicaAlgoritmos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MSI\Desktop\proyexto sam\PruebaTecnica\LogicaAlgoritmos\obj\Debug\net9.0\LogicaAlgoritmos.AssemblyInfoInputs.cache
+C:\Users\MSI\Desktop\proyexto sam\PruebaTecnica\LogicaAlgoritmos\obj\Debug\net9.0\LogicaAlgoritmos.AssemblyInfo.cs
+C:\Users\MSI\Desktop\proyexto sam\PruebaTecnica\LogicaAlgoritmos\obj\Debug\net9.0\LogicaAlgoritmos.csproj.CoreCompileInputs.cache
+C:\Users\MSI\Desktop\proyexto sam\PruebaTecnica\LogicaAlgoritmos\obj\Debug\net9.0\LogicaAlgoritmos.sourcelink.json
+C:\Users\MSI\Desktop\proyexto sam\PruebaTecnica\LogicaAlgoritmos\obj\Debug\net9.0\LogicaAlgoritmos.dll
+C:\Users\MSI\Desktop\proyexto sam\PruebaTecnica\LogicaAlgoritmos\obj\Debug\net9.0\refint\LogicaAlgoritmos.dll
+C:\Users\MSI\Desktop\proyexto sam\PruebaTecnica\LogicaAlgoritmos\obj\Debug\net9.0\LogicaAlgoritmos.pdb
+C:\Users\MSI\Desktop\proyexto sam\PruebaTecnica\LogicaAlgoritmos\obj\Debug\net9.0\LogicaAlgoritmos.genruntimeconfig.cache
+C:\Users\MSI\Desktop\proyexto sam\PruebaTecnica\LogicaAlgoritmos\obj\Debug\net9.0\ref\LogicaAlgoritmos.dll
